@@ -74,7 +74,7 @@ document-scanner/
   uvicorn app:app --reload
   ```
   The API will run on http://localhost:8000.
-  It might take some on the first start up for DocTR to download the OCR models.
+  It might take some on the first startup for DocTR to download the OCR models.
 
 ### Frontend Setup
 
