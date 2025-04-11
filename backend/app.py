@@ -19,8 +19,11 @@ logger = logging.getLogger(__name__)
 async def lifespan(app: FastAPI):
     # Startup: Initialize heavy resources once
     logger.info("Starting up backend resources...")
+    logger.info("Configuring DSPy...")
     configure_dspy()
+    logger.info("Setting up document processor...")
     app.state.document_processor = DocumentProcessor()
+    logger.info("Setting up document analyzer...")
     app.state.document_analyzer = DocumentAnalyzer()
     yield  # Run the application
     logger.info("Shutting down backend resources...")
